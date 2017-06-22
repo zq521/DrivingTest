@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">DrivingTest</string>
+    <string name="title_home">考试</string>
+    <string name="title_dashboard">设置</string>
+    <string name="subject1">科目一</string>
+    <string name="subject2">科目二</string>
+    <string name="subject3">科目三</string>
+    <string name="subject4">科目四</string>
+    <string name="none">No</string>
+
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
