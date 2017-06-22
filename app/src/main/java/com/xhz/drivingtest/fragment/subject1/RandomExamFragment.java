@@ -1,4 +1,4 @@
-package com.xhz.drivingtest.fragment;
+package com.xhz.drivingtest.fragment.subject1;
 
 
 import android.os.Bundle;
@@ -7,18 +7,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.xhz.drivingtest.databinding.FragmentExamBinding;
+import com.xhz.drivingtest.databinding.FragmentRandomExamBinding;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ExamFragment extends Fragment {
+public class RandomExamFragment extends BaseSubject1ContentFragment {
 
+    private FragmentRandomExamBinding mBinding;
 
-    private FragmentExamBinding mBinding;
-
-    public ExamFragment() {
-        // Required empty public constructor
+    public RandomExamFragment() {
     }
 
 
@@ -26,12 +24,11 @@ public class ExamFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        mBinding = FragmentRandomExamBinding.inflate(inflater);
+        mBinding.setController(new RandomExamFragmentController(this,mBinding));
 
-
-        mBinding = FragmentExamBinding.inflate(inflater);
-        mBinding.setController(new ExamFragmentController(this,mBinding));
         return mBinding.getRoot();
-
     }
+
 
 }

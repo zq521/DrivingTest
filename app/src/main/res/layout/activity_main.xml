@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
-
     <data>
-
         <variable
             name="controller"
-            type="com.xhz.drivingtest.controller.MainController"/>
+            type="com.xhz.drivingtest.MainController"/>
     </data>
 
     <LinearLayout
@@ -28,7 +26,6 @@
             android:id="@+id/navigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
             android:background="?android:attr/windowBackground"
             app:menu="@menu/navigation"/>
 

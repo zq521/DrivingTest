@@ -1,8 +1,7 @@
-package com.xhz.drivingtest.controller;
+package com.xhz.drivingtest.fragment;
 
 import com.xhz.drivingtest.ada.ExamAdapter;
 import com.xhz.drivingtest.databinding.FragmentExamBinding;
-import com.xhz.drivingtest.fragment.ExamFragment;
 
 /**
  * mail：727319870@qq.com
@@ -23,9 +22,9 @@ public class ExamFragmentController {
     }
 
     private void configVP() {
+
         binding.viewPager.setAdapter(new ExamAdapter(examFragment.getContext(),examFragment.getChildFragmentManager()));
         binding.tabLayout.setupWithViewPager(binding.viewPager);
-
 
     }
 

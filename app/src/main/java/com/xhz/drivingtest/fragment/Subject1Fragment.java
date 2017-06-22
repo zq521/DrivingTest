@@ -2,18 +2,21 @@ package com.xhz.drivingtest.fragment;
 
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.xhz.drivingtest.R;
+import com.xhz.drivingtest.databinding.FragmentSubject1Binding;
+import com.xhz.drivingtest.fragment.subject1.Subject1FragmentController;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class Subject1Fragment extends SubjectFragment {
 
+
+    private FragmentSubject1Binding mBinding;
+    private Subject1FragmentController mSubject1FragmentController;
 
     public Subject1Fragment() {
         // Required empty public constructor
@@ -23,8 +26,17 @@ public class Subject1Fragment extends SubjectFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_subject1, container, false);
+
+        mBinding = FragmentSubject1Binding.inflate(inflater);
+        mSubject1FragmentController = new Subject1FragmentController(this, mBinding);
+        mBinding.setController(mSubject1FragmentController);
+        return mBinding.getRoot();
+
     }
 
+    @Override
+    public void onResume() {
+        mSubject1FragmentController.onResume();
+        super.onResume();
+    }
 }

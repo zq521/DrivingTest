@@ -1,11 +1,9 @@
-package com.xhz.drivingtest.controller;
+package com.xhz.drivingtest;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.view.MenuItem;
 
-import com.xhz.drivingtest.MainActivity;
-import com.xhz.drivingtest.R;
 import com.xhz.drivingtest.databinding.ActivityMainBinding;
 import com.xhz.drivingtest.fragment.ExamFragment;
 import com.xhz.drivingtest.fragment.SetFragment;
@@ -40,7 +38,7 @@ public class MainController {
                     mMainActivity.getSupportFragmentManager().beginTransaction()
                             //系统动画效果
 //                             .setCustomAnimations()
-                            .replace(R.id.container,new SetFragment())
+                            .replace(R.id.content, new SetFragment())
                             .commit();
                     return true;
 
@@ -52,7 +50,6 @@ public class MainController {
     public MainController(MainActivity mainActivity, ActivityMainBinding binding) {
         this.mMainActivity = mainActivity;
         this.binding = binding;
-
         addListener();
     }
 
@@ -60,12 +57,12 @@ public class MainController {
         binding.navigation.setOnNavigationItemSelectedListener(navigation);
     }
 
-    private void addExamFragment(){
+    private void addExamFragment() {
         mMainActivity.getSupportFragmentManager().beginTransaction()
                 //系统动画效果
                 // .setCustomAnimations()
-                .replace(R.id.container, new ExamFragment())
+                .replace(R.id.content, new ExamFragment())
                 .commit();
-        currentItemId=R.id.navigation_Exam;
+        currentItemId = R.id.navigation_Exam;
     }
 }
